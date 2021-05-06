@@ -1,6 +1,6 @@
 class ParamsExampleController < ApplicationController
   def query_params
-    num = params["num"]
+    num = params["title"]
     guessedNum = "60"
     comment = ""
     if num < "36"
@@ -12,5 +12,15 @@ class ParamsExampleController < ApplicationController
     end
     render json: {message: "your number is: #{num}", message2: "#{comment} #{num}"}
   end
+
+
+  def url_segment
+    input_url=params["thing"]
+
+    render json: {message: "Your input URL is: #{input_url}"}
+
+  end
+
+
 end
 
