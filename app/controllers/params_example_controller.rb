@@ -16,11 +16,14 @@ class ParamsExampleController < ApplicationController
 
   def url_segment
     input_url=params["thing"]
-
     render json: {message: "Your input URL is: #{input_url}"}
 
   end
-
+ 
+  def body_params_ex
+    input_url=params["secret"]
+    render json: {message: "Your secret code is: #{input_url}"}
+  end
 
 end
 
